@@ -1,4 +1,4 @@
-var btn_register=document.querySelector('button')
+var btn_register=document.getElementById('valider')
 btn_register.addEventListener('click',register)
 function register(e){
     e.preventDefault()//pour ne pas rafraichir la page automatiquement
@@ -27,7 +27,8 @@ function register(e){
     }
 
     var email=document.getElementById('email')
-    if(email.value==""){
+   
+        if( email.value=="" || !email.value.includes('@')){
         form_valid=false
 
         email.classList.remove('is-valid')
@@ -51,11 +52,12 @@ function register(e){
     }
 
     var password2=document.getElementById('password2')
-    if(password2.value=="" && password.value!=password2.value){
+    if(password2.value=="" || password.value!=password2.value){
         form_valid=false
 
         password2.classList.remove('is-valid')
         password2.classList.add('is-invalid')
+        
     }
     else{
         password2.classList.remove('is-invalid')
@@ -69,7 +71,7 @@ function register(e){
             password:password.value,
             password2:password2.value
         }
-        var users = JSON.parse(localStorage.getItem('users')) || [] //charger les items préexistant dans localStorage sinon on crée un tableau vide
+        var products = JSON.parse(localStorage.getItem('users')) || [] //charger les items préexistant dans localStorage sinon on crée un tableau vide
         users.push(data) //ajouter data au tableau users
         console.log(users)
         localStorage.setItem('users',JSON.stringify(users))

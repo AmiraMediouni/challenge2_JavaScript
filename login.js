@@ -1,4 +1,5 @@
-var btn=document.querySelector('button')
+var btn=document.getElementById('se_connecter')
+
 btn.addEventListener('click',login)
 
 function login(e){

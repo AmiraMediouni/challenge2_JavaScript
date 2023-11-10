@@ -42,7 +42,9 @@
 
     <div class="container">
         <div class="row d-flex justify-content-center align-itms-center mt-5 " >
-            <table class="table">
+            <h1 class="text-primary"> Liste de produits </h1>
+            <br><br><br><br>
+            <table class="table table-success table-striped table-bordered border-dark">
                 <thead>
                   <tr>
                     <th scope="col">Référence</th>
@@ -53,21 +55,70 @@
                     <th scope="col">Action</th>
                   </tr>
                 </thead>
-                <tbody>
-                  <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td>
-                        <button type="button" class="btn btn-success">Modifier</button>
-                        <button type="button" class="btn btn-danger">Supprimer</button>
-                    </td>
-                  </tr>
+                <tbody id="tbody">
+                  
                   
                 </tbody>
               </table>
+              <!-- Button trigger modal -->
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5" id="exampleModalLabel">Modifier produit</h1>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+            <form>
+                <div class="my-2">
+                    <label for="reference" class="form-label">Référence:</label>
+                    <input type="text" class="form-control" id="reference" placeholder="Saisissez la référence du produit ici" required>
+                    <div class="invalid-feedback">la référence est  obligatoire *</div>
+
+                  </div>
+                <div class="my-2">
+                    <label for="nom" class="form-label">Nom_produit:</label>
+                    <input type="text" class="form-control" id="nom" placeholder="Saisissez le nom de produit ici" required>
+                    <div class="invalid-feedback">le nom de produit est  obligatoire *</div>
+          
+                  </div>
+                  
+                  
+                <div class="my-2">
+                  <label for="prix" class="form-label">Prix:</label>
+                  <input type="number" class="form-control" id="prix" placeholder="Saisissez le prix de produit ici" required>
+                  <div class="invalid-feedback">le prix est  obligatoire *</div>
+
+        
+                </div>
+                <div class="mb-3">
+                  <label for="quantite" class="form-label">Quantité :</label>
+                  <input  type="number" class="form-control" id="quantite" placeholder="Saisissez la quantité ici" required>
+                  <div class="invalid-feedback">la quantité est  obligatoire *</div>
+
+                </div>
+
+                <div class="mb-3">
+                    <label for="description" class="form-label">Description:</label>
+                    <input type="text" id="description" class="form-control" placeholder="Saisissez votre description ici" required> </textarea>
+                    <div class="invalid-feedback">la description est  obligatoire *</div>
+
+                  </div>
+
+                <br>
+                
+                
+            </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annuler</button>
+          <button type="button" id="save" class="btn btn-primary" >Enregistrer</button>
+        </div>
+      </div>
+    </div>
+  </div>
         </div>
     </div>
     <script src="./list_product.js"></script>

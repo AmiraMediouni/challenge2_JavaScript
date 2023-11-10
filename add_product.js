@@ -73,8 +73,11 @@ function add_P(e){
         products.push(data) 
         console.log(products)
         localStorage.setItem('products',JSON.stringify(products))
+        window.location.href='./list_product.html'
+        
 
     }
+
 
    
     
